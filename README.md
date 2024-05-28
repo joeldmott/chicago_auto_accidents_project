@@ -17,17 +17,17 @@ Recent CDOT studies on Chicago traffic safety have found that [most accidents in
 
 ### dataset
 
-This project's raw dataset originates from the [City of Chicago's website](https://data.cityofchicago.org/Transportation/Traffic-Crashes-Crashes/85ca-t3if/about_data), where it is updated daily. I downloaded the data on May 1st, 2024 and [uploaded that snapshot to Kaggle](https://www.kaggle.com/datasets/joelmott/chicago-traffic-crashes-may-2024).
+This project's raw dataset originates from the [City of Chicago's website](https://data.cityofchicago.org/Transportation/Traffic-Crashes-Crashes/85ca-t3if/about_data), where it is updated daily. I downloaded the data on May 1st, 2024 and [uploaded that snapshot to Kaggle](https://www.kaggle.com/datasets/joelmott/chicago-traffic-crashes-may-2024) for this project.
 
 This dataset consists of three seperate csv files: one for general crash information, one for the people involved in each crash, and one for each vehicle. When merged, the resulting dataset contains over 146 columns and 3.8 million records tied to over 837,000 different traffic crashes.
 
 ### data preparation & modeling
 
-While some data preprocessing and feature elimination took place in my [data engineering notebook](https://github.com/joeldmott/chicago_auto_accidents_project/blob/main/data_engineering_notebook.ipynb) through EDA and domain knowledge, further feature trimming through modeling is done in the [project notebook](https://github.com/joeldmott/chicago_auto_accidents_project/blob/main/project_notebook.ipynb), which is available to run and reproduce on [Google Colab](https://colab.research.google.com/drive/1uUvI_7ytHNdIKEZjJs73YlK-Y0rZjljM#scrollTo=HOPrEI3idQmK).
+While some data preprocessing and feature elimination took place in my [data engineering notebook](https://github.com/joeldmott/chicago_auto_accidents_project/blob/main/data_engineering_notebook.ipynb) through EDA and domain knowledge, further feature trimming through modeling is done in the [project notebook](https://github.com/joeldmott/chicago_auto_accidents_project/blob/main/project_notebook.ipynb), which is available to run for reproducibility on [Google Colab](https://colab.research.google.com/drive/1uUvI_7ytHNdIKEZjJs73YlK-Y0rZjljM#scrollTo=HOPrEI3idQmK), where it links to the aforementioned data snapshot. 
 
 Since this project focuses more on the data's *features*, the overall emphasis is on **model interpretability** as opposed to prediction accuracy. Specifically, while I use some black-box modeling techniques (a Scikit-Learn Random Forest as well as Principal Component Analysis) to help trim the features down, the ultimate predicting models are white-box methods that are easier for a non-technical stakeholder to interpret.
 
-A StatsModels Logistic Regression model struggled to find a linear relationship to this more complex data, but it did help with further feature reduction. Ultimately, a Scikit-Learn Decision Tree model was able to make better predictions while still showing which columns tend to contibute to reckless & negligent driving in a more interpretable fashion.
+I first attempted a StatsModels Logistic Regression model, but it struggled to find a linear relationship to this more complex data. However, it did help with further feature reduction. Ultimately, a Scikit-Learn Decision Tree model was able to make better predictions while still showing which columns tend to contibute to reckless & negligent driving in a more interpretable fashion.
 
 ### evaluation
 
