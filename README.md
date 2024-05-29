@@ -29,7 +29,7 @@ Since this project focuses more on the data's *features*, the overall emphasis i
 
 I first attempted a StatsModels Logistic Regression model, but it struggled to find a linear relationship to this more complex data. However, it did help with further feature reduction. Ultimately, a Scikit-Learn Decision Tree model was able to make better predictions while still showing which columns tend to contibute to reckless & negligent driving in a more interpretable fashion.
 
-### evaluation
+### evaluation & recommendations
 
 As seen below, the final model's perfomance results are more so in the 'acceptable' range than 'great'. While they would likely be higher through use of a more complex model, this white-box approach allows for a more interpretable look at the data features which should be targeted to help improve traffic safety with a broader approach.
 
@@ -48,3 +48,41 @@ While these finding aren't exactly groundbreaking, they do help isolate issues f
 1. Ads focused on heavy traffic safety for drivers between 23-40
 2. Road sign/traffic signal studies in Chicago’s middle/downtown 
 3. Safety PSAs over the radio during commute times
+
+## repository structure
+
+├── neighborhood_map_files
+
+│   ├── geo_export_df22ab9c-413f-437b-bc82-670738159fac.cpg
+
+│   ├── geo_export_df22ab9c-413f-437b-bc82-670738159fac.dbf
+
+│   ├── geo_export_df22ab9c-413f-437b-bc82-670738159fac.prj
+
+│   ├── geo_export_df22ab9c-413f-437b-bc82-670738159fac.shp
+
+│   ├── geo_export_df22ab9c-413f-437b-bc82-670738159fac.shx
+
+├── street_map_files
+
+│   ├── Major_Streets.dbf
+
+│   ├── Major_Streets.prj
+
+│   ├── Major_Streets.sbn
+
+│   ├── Major_Streets.sbx
+
+│   ├── Major_Streets.shp
+
+│   ├── Major_Streets.shx
+
+├── README.md
+
+├── data_engineering_notebook.ipynb
+
+├── presentation.pdf
+
+└── project-notebook.ipynb
+
+feel free to contact me with questions or feedback at joel.mott8@gmail.com
