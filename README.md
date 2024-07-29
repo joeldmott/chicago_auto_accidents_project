@@ -19,7 +19,7 @@ Recent CDOT studies on Chicago traffic safety have found that [most accidents in
 
 This project's raw dataset originates from the [City of Chicago's website](https://data.cityofchicago.org/Transportation/Traffic-Crashes-Crashes/85ca-t3if/about_data), where it is updated daily. I downloaded the data on May 1st, 2024 and [uploaded that snapshot to Kaggle](https://www.kaggle.com/datasets/joelmott/chicago-traffic-crashes-may-2024) for this project.
 
-This dataset consists of three seperate csv files: one for general crash information, one for the people involved in each crash, and one for each vehicle. When merged, the resulting dataset contains over 146 columns and 3.8 million records tied to over 837,000 different traffic crashes.
+This dataset consists of three seperate csv files: one for general crash information, one for the people involved in each crash, and one for each vehicle involved. When merged, the resulting dataset contains over 146 columns and 3.8 million records tied to over 837,000 different traffic crashes.
 
 ### data preparation & modeling
 
@@ -27,23 +27,23 @@ While some data preprocessing and feature elimination took place in my [data eng
 
 Since this project focuses more on the data's *features*, the overall emphasis is on **model interpretability** as opposed to prediction accuracy. Specifically, while I use some black-box modeling techniques (a Scikit-Learn Random Forest as well as Principal Component Analysis) to help trim the features down, the ultimate predicting models are white-box methods that are easier for a non-technical stakeholder to interpret.
 
-I first attempted a StatsModels Logistic Regression model, but it struggled to find a linear relationship to this more complex data. However, it did help with further feature reduction. Ultimately, a Scikit-Learn Decision Tree model was able to make better predictions while still showing which columns tend to contibute to reckless & negligent driving in a more interpretable fashion.
+I first attempted a StatsModels Logistic Regression model, but it struggled to find a linear relationship among this more complex data. However, it did help with further feature reduction. Ultimately, a Scikit-Learn Decision Tree model was able to make better predictions while still showing which columns tend to contibute to reckless & negligent driving in a more interpretable fashion.
 
 ### evaluation & recommendations
 
-As seen below, the final model's perfomance results are more so in the 'acceptable' range than 'great'. While they would likely be higher through use of a more complex model, this white-box approach allows for a more interpretable look at the data features which should be targeted to help improve traffic safety with a broader approach.
+As seen below, the final model's perfomance results are more so in the 'acceptable' range than 'great'. While they would likely be better through use of a more complex model, this white-box approach allows for a more interpretable look at the data features which should be targeted to help improve traffic safety with a broader approach.
 
 These finding were validated through an 80/20 train-test-split before preprocessing.
 
 ![final model results](https://github.com/joeldmott/chicago_auto_accidents_project/assets/51928528/4f5a1d8b-0797-42e7-a82c-2f4df9ac3fc5)
 
-By the end of the modeling process, three features stand out as being the most important when it comes to predicting whether an accident was avoidable:
+By the end of the modeling process, three data features contribute far more than others when predicting whether an accident was avoidable:
 
 - location (on busier streets)
 - age (drivers between 23-40 are most likely to have an avoidable crash)
 - time of day (heavier commute times are riskier)
 
-While these finding aren't exactly groundbreaking, they do help isolate issues for general traffic safety, resulting in the following three recommendations:
+While they aren't exactly groundbreaking, they do isolate issues for general traffic safety, resulting in the following three recommendations:
 
 1. Ads focused on heavy traffic safety for drivers between 23-40
 2. Road sign/traffic signal studies in Chicago’s middle/downtown 
